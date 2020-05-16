@@ -1,6 +1,14 @@
 import os
 import random
 import argparse
+try:
+	if os.name=="nt":
+		import msvcrt as getch
+	else:
+		import getch
+except ImportError:
+	print("Importing module....")
+	os.system('pip install getch')
 def rotation_anti(board,n):# rotates the complete board in anti clockwise sense
 	for i in range(n // 2):
 		for j in range(i, n-i-1):
@@ -23,7 +31,7 @@ def clr():#for clearing screen
     os.system('cls')
   else:
     os.system('clear')
-def shifting(board,n):#shifts the non zero board values to right,sets a flag if nothing changed
+def shifting(board,n):#shifts the non zero board values to left,sets a flag if nothing changed
 	flag=0
 	temp=[[0 for i in range(n)] for j in range(n)]
 	for i in range(n):
@@ -35,7 +43,7 @@ def shifting(board,n):#shifts the non zero board values to right,sets a flag if 
 	if temp==board:
 		flag=1
 	return (temp,flag)
-def adding(board,n):#adds the similar value,addition starts from the left end of board like in the actual game,sets a flag if nothing is changed
+def adding(board,n):#adds the similar value,addition starts from the right end of board,sets a flag if nothing is changed
 	flag=0
 	temp=board.copy()
 	for i in range(n):
@@ -55,7 +63,7 @@ def new_2(board,n):#genarates random 2 on location with zero,non zero locations 
 			board[h][k]=2
 			break
 	return board
-def moving(board,n):#a fn to shift then add and again shifts,3 flags are used to check is no changes occured in the Board,if all flags are true the new 2 should not be generated hence and
+def moving(board,n):#a fn to shift then add and again shifts,3 flags are used to check is no changes occured in the Board
 	board,flag1=shifting(board,n)
 	board,flag2=adding(board,n)
 	board,flag3=shifting(board,n)
@@ -100,8 +108,11 @@ def game_2048(board,n,w,flag):#this fn does the main work
 		print_board(board,n)
 		while True:#validation of move input
 			try:
-				move=input('''Enter move:\n\tw for up\n\td for down\n\ta for left\n\td for right\n\tctrl+c to forfeit \n ''').lower()
-				if move not in ('w','a','s','d'):
+				print('''Enter move:\n\tw for up\n\td for down\n\ta for left\n\td for right\n\tq to forfeit \n ''')
+				move=getch.getche()
+				if move==b'q':
+					raise KeyboardInterrupt
+				if move not in (b'w',b'a',b's',b'd'):
 					print("Invalid Input ")
 				else:
 					break
@@ -110,21 +121,21 @@ def game_2048(board,n,w,flag):#this fn does the main work
 				print("This was the final board, the game was forfeited by user")
 				print_board(board,n)
 				return 0
-		if move=='w':
+		if move==b'w':
 			board=rotation(board,n)
 			board,flag=moving(board,n)
 			board=rotation_anti(board,n)
-		elif move=='a':
+		elif move==b'a':
 			board=rotation(board,n)
 			board=rotation(board,n)
 			board,flag=moving(board,n)
 			board=rotation(board,n)
 			board=rotation(board,n)
-		elif move =='s':
+		elif move ==b's':
 			board=rotation_anti(board,n)
 			board,flag=moving(board,n)
 			board=rotation(board,n)
-		elif move=='d':
+		elif move==b'd':
 			board,flag=moving(board,n)
 		game_2048(board,n,w,flag)
 def start():#to take input of n,w and generate a all zero board of desired size
