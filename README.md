@@ -49,6 +49,8 @@ This game is made to be use from command line.
 * q is used to __**Forfeit**__ the game in middle of game play.
 ![Forfeit](/Images/Forfeit.png)
   >**Any other key entered during the game is considered to be Invalid Input**
+  
+  
   ![Invalid Input](/Images/Invalid.png)
 
 ## Working of game
@@ -77,7 +79,7 @@ program continues to ask for input until it gets a valid input.
     ![Try another move](/Images/tryanothermove.png)
   * No new random 2 is generated.
   
-## Proagramming Language
+## Programming Language
 * **Python 3**
 ## Modules used
 * os 
