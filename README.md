@@ -19,7 +19,7 @@ However in this adaptation of game the the user can specify the board size and t
 * The user needs to have python 3 installed in his system.
 Here's the [link](https://www.python.org/downloads/) to download python3.Download according to system's OS.
 
-* The user needs install pip3.(In case the program is unable to import a module it will install through pip3).
+* The user needs to install pip3.(In case the program is unable to import a module it will install through pip3).
 
 To install pip3 in UNIX based OSs enter 
 `sudo apt-get install pip3`or `sudo apt-get install python3-pip` on terminal.
@@ -27,7 +27,7 @@ To install pip3 in UNIX based OSs enter
 In case of Fendora linux enter `sudo yum install python3-pip`.
 
 ## How to play
-This game is made to be use from command line.
+This game is made to be played from command line.
 
 #### 1.To Start:
 * Go to directory where the program is stored.
