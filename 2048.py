@@ -9,7 +9,7 @@ try:
 		import getch
 except ImportError:
 	print("Importing module....")
-	system('pip install getch')
+	system('pip3 install getch')
 def rotation_anti(board,n):
 	for i in range(n // 2):
 		for j in range(i, n-i-1):
