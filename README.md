@@ -60,7 +60,7 @@ This game is made to be played from command line.
 
 
   ![Win](/Images/Win.png)
-* In case all places are filled by non-zero numbers the user looses the game.
+* In case all places are filled by non-zero numbers the user loses the game.
 
 
   ![Lost](/Images/lost.png)
