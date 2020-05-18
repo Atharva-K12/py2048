@@ -120,7 +120,7 @@ def game_2048(board,n,w,flag):
 		game_2048(board,n,w,flag)
 def start():
 	p=argparse.ArgumentParser()
-	p.add_argument("--n",help="Provide Board size",type=int,nargs='?',default=5,choices=range(1,20))
+	p.add_argument("--n",help="Provide Board size",type=int,nargs='?',default=5,choices=range(1,40))
 	p.add_argument("--w",help="win value",type=int,nargs='?',default=2048,choices=[2**j for j in range(1,50)] )
 	arg=p.parse_args()
 	board=[[0 for j in range(arg.n)]for i in range(arg.n)]
