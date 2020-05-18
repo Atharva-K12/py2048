@@ -5,6 +5,9 @@ In the original game the user has to slide the tiles to combine similar tiles an
 
 However in this adaptation of game the the user can specify the board size and the winning value.
 
+Windows was the OS used to write the program.
+Atom was used as a text editor.
+
 
 ![Initial Setup](/Images/InitialSetup.png)
 
@@ -13,8 +16,7 @@ However in this adaptation of game the the user can specify the board size and t
 2. [How to play](#how-to-play)
 3. [Working of game](#working-of-game)
 4. [Validation of Inputs](#validation-of-inputs)
-5. [Programming Language](#programming-language)
-6. [Modules used](#modules-used)
+5. [Modules used](#modules-used)
 ## Requirements
 * The user needs to have python 3 installed in his system.
 Here's the [link](https://www.python.org/downloads/) to download python3.Download according to system's OS.
@@ -79,8 +81,6 @@ program continues to ask for input until it gets a valid input.
     ![Try another move](/Images/tryanothermove.png)
   * No new random 2 is generated.
   
-## Programming Language
-* **Python 3**
 ## Modules used
 * os 
   > for getting the os name and passing commands to command line
